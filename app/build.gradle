@@ -28,6 +28,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        // https://juejin.cn/post/6844903942007029773
         sanitize {
             initWith debug
 

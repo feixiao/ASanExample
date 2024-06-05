@@ -24,8 +24,9 @@ Instructions to modify from a stock Android project with CMake:
    }
    ```
 4. Sync Gradle and switch your active variant to "sanitize" in the "Build Variants" tab (bottom left)
+   + AndroidStudio上面有个Build Variants，选择sanitize
 5. Debug your App and reproduce the issue. You should see output from address sanitizer (filter by "wrap.sh"). In the stack traces you will see lines like:
-
+   + 需要全部日志，androidstudio会过滤
        #1 0x5e2cdaf76c  (/data/app/~~lTqqcXu2okmchd_nMeTm7w==/io.nrbtech.asanexample-spc73OiysYUjJ2984-N4kw==/lib/arm64/libasanexample.so+0x76c)
 
    Where `libasanexample.so` is the name of the compiled C library and `0x76c` represents the offset into the library the stack trace is pointing to.
